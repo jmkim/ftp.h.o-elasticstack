@@ -1,0 +1,29 @@
+zone "vaai" {
+        type master;
+        file "/etc/bind/zones/zones.vaai";
+        allow-update { none; };
+};
+
+zone "80.20.10.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/zones.80.20.10.in-addr.arpa";
+        allow-update { none; };
+};
+
+zone "81.20.10.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/zones.81.20.10.in-addr.arpa";
+        allow-update { none; };
+};
+
+zone "82.20.10.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/zones.82.20.10.in-addr.arpa";
+        allow-update { none; };
+};
+
+zone "83.20.10.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/zones.83.20.10.in-addr.arpa";
+        allow-update { none; };
+};
