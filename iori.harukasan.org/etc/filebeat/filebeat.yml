@@ -122,6 +122,11 @@ setup.kibana:
   # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
   host: "https://kws.harukasan.org:50443"
 
+  # Optional protocol and basic auth credentials.
+  protocol: "https"
+  username: "filebeat"
+  password: "CHANGE_PASSWORD_HERE"
+
 #============================= Elastic Cloud ==================================
 
 # These settings simplify using filebeat with the Elastic Cloud (https://cloud.elastic.co/).
