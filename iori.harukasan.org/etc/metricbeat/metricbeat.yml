@@ -91,7 +91,7 @@ output.elasticsearch:
   # Optional protocol and basic auth credentials.
   protocol: "https"
   username: "metricbeat"
-  password: "d21cbbb7a1f271c4756c7a310292ee8a5de40e0f7b84f651be9af3822b997db3"
+  password: "CHANGE_PASSWORD_HERE"
 
 #----------------------------- Logstash output --------------------------------
 #output.logstash:

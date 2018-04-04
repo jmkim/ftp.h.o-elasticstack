@@ -147,7 +147,7 @@ output.elasticsearch:
   # Optional protocol and basic auth credentials.
   protocol: "https"
   username: "filebeat"
-  password: "0c524089195104bdbf4ce5daa500a12867ee791f7790e6a545ef0a1ca6b729e3"
+  password: "CHANGE_PASSWORD_HERE"
 
 #----------------------------- Logstash output --------------------------------
 #output.logstash:
