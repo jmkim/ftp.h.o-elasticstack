@@ -1,0 +1,28 @@
+; BIND db file for uuuu
+
+$ORIGIN uuuu.
+$TTL 86400
+
+uuuu. IN      SOA       ns1.uuuu.       jmkim.ns1.uuuu. (
+                        2017112100      ; serial number YYMMDDNN
+                        28800           ; Refresh
+                        7200            ; Retry
+                        864000          ; Expire
+                        86400           ; Min TTL
+                        )
+
+        IN      NS      ns1.uuuu.
+
+dhcp    IN      A       10.20.80.2
+ns1     IN      A       10.20.80.11
+ns2     IN      A       10.20.80.12
+ldap    IN      A       10.20.81.21
+dbs     IN      A       10.20.81.22
+ocsp    IN      A       10.20.81.23
+http    IN      A       10.20.81.31
+aws     IN      A       10.20.81.32
+pmaws   IN      A       10.20.81.33
+nws     IN      A       10.20.81.34
+kws     IN      A       10.20.81.35
+es1     IN      A       10.20.81.61
+ls1     IN      A       10.20.81.81

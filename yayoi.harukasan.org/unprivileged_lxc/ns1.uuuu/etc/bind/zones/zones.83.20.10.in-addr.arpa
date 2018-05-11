@@ -1,0 +1,14 @@
+; BIND db file for 83.20.10.in-addr.arpa
+
+$ORIGIN 83.20.10.in-addr.arpa.
+$TTL 86400
+
+83.20.10.in-addr.arpa.  IN      SOA     ns1.uuuu.      jmkim.ns1.uuuu. (
+                        2017112104      ; serial number YYMMDDNN
+                        28800           ; Refresh
+                        7200            ; Retry
+                        864000          ; Expire
+                        86400           ; Min TTL
+                        )
+
+        IN      NS      ns1.uuuu.

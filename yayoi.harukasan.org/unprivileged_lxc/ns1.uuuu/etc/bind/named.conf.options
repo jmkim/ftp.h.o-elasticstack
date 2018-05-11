@@ -1,0 +1,14 @@
+acl "uuuu" {
+        10.20.80.0/22;
+        localhost;
+};
+
+options {
+        directory "/var/cache/bind";
+
+        recursion yes;
+
+        allow-query { uuuu; };
+        allow-recursion { uuuu; };
+        allow-transfer { uuuu; };
+};
