@@ -1,21 +1,13 @@
 #!/bin/bash
 
 #
-# Set the IP address of this machine
-#
-#SERVER_IP[0]="121.174.208.52"
-#SERVER_IP[1]="10.20.80.1"
-#SERVER_IP[2]="10.20.56.1"
-
-
-#
 # Set the iptables rules
 #
 iptables_set_rules()
 {
     echo -n "Setting new iptables rules... "
     #
-    # Packet forwarding (for DHCP server)
+    # Packet forwarding (for gateway)
     #
 #    iptables -t filter -A FORWARD -i br0 -o br0 -j ACCEPT
 #    iptables -t filter -A FORWARD -i lxc-bridge-nat -o lxc-bridge-nat -j ACCEPT
@@ -24,7 +16,7 @@ iptables_set_rules()
 #    iptables -t filter -A FORWARD -i lxc-bridge-nat -o br0 -j ACCEPT
 
     #
-    # IP masquerading (for DHCP server)
+    # IP masquerading (for gateway)
     #
 #    iptables -t nat -A POSTROUTING -o br0 -j MASQUERADE
 #    iptables -t nat -A POSTROUTING -o lxc-bridge-nat -j MASQUERADE
@@ -32,11 +24,11 @@ iptables_set_rules()
     #
     # Port forwarding
     #
-#    for server_ip in ${SERVER_IP[@]}
-#    do
-#        iptables -t nat -A PREROUTING -i br0 -p tcp -d $server_ip --dport http -j DNAT --to 10.20.81.31:80
-#        iptables -t nat -A PREROUTING -i br0 -p tcp -d $server_ip --dport https -j DNAT --to 10.20.81.31:443
-#    done
+#    iptables -t nat -A PREROUTING -i br0 -p tcp --dport http -j DNAT --to 10.20.81.31:80
+#    iptables -t nat -A PREROUTING -i br0 -p tcp --dport http -j LOG --log-prefix='[netfilter] [http] '
+
+#    iptables -t nat -A PREROUTING -i br0 -p tcp --dport https -j DNAT --to 10.20.81.31:443
+#    iptables -t nat -A PREROUTING -i br0 -p tcp --dport https -j LOG --log-prefix='[netfilter] [https] '
 
     #
     # Access for specific port (Out->In)
@@ -46,6 +38,9 @@ iptables_set_rules()
 #
 #    # HTTPS
 #    iptables -t filter -A INPUT -p tcp --dport https -j ACCEPT
+#
+#    # FTP
+#    iptables -t filter -A INPUT -p tcp --dport ftp -j ACCEPT
 #
 #    # FTP (passive)
 #    iptables -t filter -A INPUT -p tcp --dport ftp-data -j ACCEPT
