@@ -66,11 +66,11 @@ elasticsearch.url: "http://es1.uuuu:9200"
 
 # Time in milliseconds to wait for Elasticsearch to respond to pings. Defaults to the value of
 # the elasticsearch.requestTimeout setting.
-elasticsearch.pingTimeout: 1200000
+elasticsearch.pingTimeout: 3600000
 
 # Time in milliseconds to wait for responses from the back end or Elasticsearch. This value
 # must be a positive integer.
-elasticsearch.requestTimeout: 1200000
+elasticsearch.requestTimeout: 3600000
 
 # List of Kibana client-side headers to send to Elasticsearch. To send *no* client-side
 # headers, set this value to [] (an empty list).
@@ -81,10 +81,10 @@ elasticsearch.requestTimeout: 1200000
 #elasticsearch.customHeaders: {}
 
 # Time in milliseconds for Elasticsearch to wait for responses from shards. Set to 0 to disable.
-elasticsearch.shardTimeout: 1200000
+elasticsearch.shardTimeout: 3600000
 
 # Time in milliseconds to wait for Elasticsearch at Kibana startup before retrying.
-elasticsearch.startupTimeout: 1200000
+elasticsearch.startupTimeout: 3600000
 
 # Logs queries sent to Elasticsearch. Requires logging.verbose set to true.
 #elasticsearch.logQueries: false
