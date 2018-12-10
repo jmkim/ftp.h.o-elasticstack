@@ -86,3 +86,13 @@ http.port: 9200
 # Require explicit names when deleting indices:
 #
 #action.destructive_requires_name: true
+#
+# Increasing the size of the thread pool search queue:
+#
+thread_pool.search.max_queue_size: 100000
+thread_pool.search.queue_size: 20000
+thread_pool.search.min_queue_size: 4000
+#
+# References:
+#   https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-threadpool.html
+#   https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-thread-pool.html
