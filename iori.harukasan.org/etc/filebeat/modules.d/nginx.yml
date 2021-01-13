@@ -1,3 +1,5 @@
+# Module: nginx
+
 - module: nginx
   # Access logs
   access:

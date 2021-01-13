@@ -1,3 +1,5 @@
+# Module: system
+
 - module: system
   period: 10s
   metricsets:
@@ -8,6 +10,8 @@
     - process_summary
     - socket_summary
     #- socket
+    - service
+    - users
     - diskio
   diskio.include_devices: ["sdb", "sdb1", "sdc", "sdc1", "sdd", "sdd1", "sde", "sde1", "sdf", "sdf1", "sdg", "sdg1"]
 
@@ -27,7 +31,7 @@
     - fsstat
   processors:
     - drop_event.when.regexp:
-        system.filesystem.mount_point: '^/(sys|cgroup|proc|dev|etc|host|lib)($|/)'
+        system.filesystem.mount_point: '^/(sys|cgroup|proc|dev|etc|host|lib|snap)($|/)'
 
 - module: system
   period: 15m
