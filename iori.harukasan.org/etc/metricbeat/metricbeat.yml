@@ -98,7 +98,7 @@ output.elasticsearch:
 
   # Authentication credentials - either API key or username/password.
   #api_key: "id:api_key"
-  username: "metricbeat"
+  username: "remote_monitoring_user"
   password: "CHANGE_PASSWORD_HERE"
 
 # ------------------------------ Logstash Output -------------------------------
