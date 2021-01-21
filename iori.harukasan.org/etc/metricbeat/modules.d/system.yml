@@ -1,19 +1,22 @@
 # Module: system
 
 - module: system
-  period: 10s
+  period: 5s
+  metricsets:
+    - users
+
+- module: system
+  period: 20s
   metricsets:
     - cpu
     - load
     - memory
-    - network
+
+- module: system
+  period: 30s
+  metricsets:
     - process_summary
     - socket_summary
-    #- socket
-    - service
-    - users
-    - diskio
-  diskio.include_devices: ["sdb", "sdb1", "sdc", "sdc1", "sdd", "sdd1", "sde", "sde1", "sdf", "sdf1", "sdg", "sdg1"]
 
 #- module: system
 #  period: 10s
@@ -25,13 +28,18 @@
 #    by_memory: 7  # include top 7 processes by memory
 
 - module: system
-  period: 1m
+  period: 5m
   metricsets:
     - filesystem
     - fsstat
+    - network
+    #- socket
+    #- service
+    - diskio
   processors:
     - drop_event.when.regexp:
         system.filesystem.mount_point: '^/(sys|cgroup|proc|dev|etc|host|lib|snap)($|/)'
+  diskio.include_devices: ["sdb", "sdb1", "sdc", "sdc1", "sdd", "sdd1", "sde", "sde1", "sdf", "sdf1", "sdg", "sdg1"]
 
 - module: system
   period: 15m
